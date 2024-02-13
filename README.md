@@ -1,16 +1,25 @@
-### Hi there 👋
+## Description
+The datasets and source code of SketchBANE are for Fast Hash Sketching for Billion-Scale Attribute Networks.
 
-<!--
-**SketchBANE/SketchBANE** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Generate embeddings using SketchBANE
+```
+$ cd SketchBANE
+$ python SketchBANE.py --K 200 --T 1 --data ogbn-product   
+```
 
-Here are some ideas to get you started:
+## Node Classification
+```
+$ cd nodeClassification
+$ python multi-class.py --K 200 --T 1 --data ogbn-product    # multi-class classification using inner products
+$ python multi-class_ExpandedIP.py --K 200 --T 1 --data ogbn-product     # multi-class classification using expanded inner products
+$ python multi-label.py --K 200 --T 1 --data Amazon    # multi-label classification using inner products
+$ python multi-class_ExpandedIP.py --K 200 --T 1 --data Amazon     # multi-label classification using expanded inner products
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Link Prediction
+```
+$ cd linkPrediction
+$ python lp_InnerProduct.py --K 200 --T 1 --data ogbn-product    # link prediction using inner products
+$ python lp_ExpandedIP.py --K 200 --T 1 --data ogbn-product     # link prediction using expanded inner products
+$ python lp_QuantizedKernel.py --K 200 --T 1 --data ogbn-product    # link prediction using  quantized kernel
+```
