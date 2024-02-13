@@ -13,7 +13,7 @@ $ cd nodeClassification
 $ python multi-class.py --K 200 --T 1 --data ogbn-product    # multi-class classification using inner products
 $ python multi-class_ExpandedIP.py --K 200 --T 1 --data ogbn-product     # multi-class classification using expanded inner products
 $ python multi-label.py --K 200 --T 1 --data Amazon    # multi-label classification using inner products
-$ python multi-class_ExpandedIP.py --K 200 --T 1 --data Amazon     # multi-label classification using expanded inner products
+$ python multi-label_ExpandedIP.py --K 200 --T 1 --data Amazon     # multi-label classification using expanded inner products
 ```
 
 ## Link Prediction
