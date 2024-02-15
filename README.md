@@ -1,5 +1,5 @@
 ## Description
-The datasets and source code of SketchBANE are for Fast Hash Sketching for Billion-Scale Attribute Networks.
+The datasets and source code of SketchBANE are for Time- and Space-Efficiently Sketching Billion-Scale Attributed Networks.
 
 ## Generate embeddings using SketchBANE
 ```
