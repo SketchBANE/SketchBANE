@@ -9,6 +9,7 @@ $ python SketchBANE.py --K 200 --T 1 --data ogbn-product
 
 ## Node Classification
 ```
+$ mkdir results
 $ cd nodeClassification
 $ python multi-class.py --K 200 --T 1 --data ogbn-product    # multi-class classification using inner products
 $ python multi-class_ExpandedIP.py --K 200 --T 1 --data ogbn-product     # multi-class classification using expanded inner products
@@ -18,6 +19,7 @@ $ python multi-label_ExpandedIP.py --K 200 --T 1 --data Amazon     # multi-label
 
 ## Link Prediction
 ```
+$ mkdir results
 $ cd linkPrediction
 $ python lp_InnerProduct.py --K 200 --T 1 --data ogbn-product    # link prediction using inner products
 $ python lp_ExpandedIP.py --K 200 --T 1 --data ogbn-product     # link prediction using expanded inner products
