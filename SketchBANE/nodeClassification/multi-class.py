@@ -6,6 +6,7 @@ from sklearn.metrics import f1_score,accuracy_score
 from scipy.sparse import save_npz, load_npz
 from sklearn.model_selection import KFold
 import argparse
+import random
 
 # multi-class classification
 def predict_cv(X, y, C=1., num_workers=1):
@@ -53,7 +54,12 @@ if __name__ == '__main__':
     embedding = load_npz(embedding_path)
     for iteration in range(1,6):
         subset_size = 60000  # Set the subset size as needed
-        random_indices = np.random.choice(embedding.shape[0], subset_size, replace=False)
+        if dataset == 'ogbn-papers100M':
+            non_negative_indices = np.where(labels != -1)[0]
+            random_indices = random.sample(list(non_negative_indices), subset_size)
+            random_indices = np.array(random_indices)
+        else:
+            random_indices = np.random.choice(embedding.shape[0], subset_size, replace=False)
         sub_embedding = embedding[random_indices]
         sub_labels = labels[random_indices]
         acc,micro,macro = predict_cv(sub_embedding,sub_labels)
@@ -80,4 +86,3 @@ if __name__ == '__main__':
         fout.write("micro-f1: "+str(average_micro_f1)+"---std_micro-f1: "+str(std_micro_f1)+"\n")
         fout.write("macro-f1: "+str(average_macro_f1)+"---std_macro-f1: "+str(std_macro_f1)+"\n")
         fout.write("----------------------------------------------------------------------------\n")
-
